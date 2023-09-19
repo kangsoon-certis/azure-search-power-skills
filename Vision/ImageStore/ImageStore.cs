@@ -49,7 +49,7 @@ namespace AzureCognitiveSearch.PowerSkills.Vision.ImageStore
             WebApiSkillResponse response = await WebApiSkillHelpers.ProcessRequestRecordsAsync(skillName, requestRecords,
                 async (inRecord, outRecord) => {
                     var imageData = inRecord.Data["imageData"] as string;
-                    imageName = Guid.NewGuid().ToString();
+                    var imageName = Guid.NewGuid().ToString();
                     var mimeType = inRecord.Data["mimeType"] as string;
                     if (String.IsNullOrEmpty(mimeType))
                     {
